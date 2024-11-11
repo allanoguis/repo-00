@@ -1,49 +1,39 @@
-const number = document.getElementById("number");
-const output = document.getElementById("output");
-const convertBtn = document.getElementById("convert-btn");
+const sortButton = document.getElementById("sort");
 
-const romObj = [
-  { sym: "M", value: 1000 },
-  { sym: "CM", value: 900 },
-  { sym: "D", value: 500 },
-  { sym: "CD", value: 400 },
-  { sym: "C", value: 100 },
-  { sym: "XC", value: 90 },
-  { sym: "L", value: 50 },
-  { sym: "XL", value: 40 },
-  { sym: "X", value: 10 },
-  { sym: "IX", value: 9 },
-  { sym: "V", value: 5 },
-  { sym: "IV", value: 4 },
-  { sym: "I", value: 1 },
-];
+const sortInputArray = (event) => {
+  event.preventDefault();
 
-convertBtn.addEventListener("click", () => {
-  const input = number.value;
-  validator(input);
-});
+  const inputValues = [
+    ...document.getElementsByClassName("values-dropdown"),
+  ].map((dropdown) => Number(dropdown.value));
 
-const validator = (input) => {
-  output.innerText = "";
-  const numInput = Number(input);
-  if (input === "" || isNaN(numInput)) {
-    output.innerText += "Please enter a valid number";
-  } else if (numInput < 1) {
-    output.innerText += "Please enter a number greater than or equal to 1";
-  } else if (numInput >= 4000) {
-    output.innerText += "Please enter a number less than or equal to 3999";
-  } else {
-    convert(numInput);
-  }
+  updateUI(inputValues);
 };
 
-const convert = (input) => {
-  let result = "";
-  romObj.forEach(({ sym, value }) => {
-    while (input >= value) {
-      result += sym;
-      input -= value;
-    }
+const updateUI = (array = []) => {
+  array.forEach((num, i) => {
+    const outputValueNode = document.getElementById(`output-value-${i}`);
+    outputValueNode.innerText = num;
   });
-  output.innerText += result;
 };
+
+sortButton.addEventListener("click", sortInputArray);
+
+// Other sorting algorithms
+// --- Bubble Sort
+
+// const bubbleSort = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 0; j < array.length - 1; j++) {
+//       if (array[j] > array[j + 1]) {
+//         const temp = array[j];
+//         array[j] = array[j + 1];
+//         array[j + 1] = temp;
+//       }
+//     }
+//   }
+
+//   return array;
+// };
+
+// --- Selection Sort
