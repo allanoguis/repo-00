@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#drum-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display {
+    margin-bottom: 20px;
+    font-size: 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    width: 300px;
+}
+
+.drum-pads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.drum-pad {
+    background-color: #444;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.drum-pad:hover {
+    background-color: #555;
+}
