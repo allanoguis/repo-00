@@ -1,0 +1,14 @@
+/* styles.css */
+/* Add your styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#tooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+}

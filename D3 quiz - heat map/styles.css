@@ -1,0 +1,21 @@
+/* Add your styles here */
+.cell {
+    stroke: #fff;
+}
+
+/* Define colors for the cells */
+.color1 {
+    fill: #ff0000;
+}
+
+.color2 {
+    fill: #00ff00;
+}
+
+.color3 {
+    fill: #0000ff;
+}
+
+.color4 {
+    fill: #ffff00;
+}
